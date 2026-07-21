@@ -1,0 +1,15 @@
+{
+  "personen": [
+    { "id": 1, "vorname": "Anna", "nachname": "Müller", "alter": 22, "stadt": "Saarbrücken" },
+    { "id": 2, "vorname": "Ben", "nachname": "Zwaniger", "alter": 19, "stadt": "Homburg" },
+    { "id": 3, "vorname": "Carla", "nachname": "Annenheim", "alter": 24, "stadt": "Saarbrücken" },
+    { "id": 4, "vorname": "David", "nachname": "Karl", "alter": 21, "stadt": "Neunkirchen" },
+    { "id": 5, "vorname": "Esther", "nachname": "Schmidt", "alter": 23, "stadt": "Homburg" }
+  ],
+  "kurse": [
+    { "id": 1, "titel": "Programmieren", "ects": 5, "pflicht": true },
+    { "id": 2, "titel": "Datenbanken", "ects": 5, "pflicht": true },
+    { "id": 3, "titel": "Design Thinking", "ects": 3, "pflicht": false },
+    { "id": 4, "titel": "Mathe", "ects": 5, "pflicht": true }
+  ]
+}

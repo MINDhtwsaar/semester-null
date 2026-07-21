@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>MySQL-Blitz · Kapitel 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css" />
+</head>
+<body class="page-mysql">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <a class="brand-home" href="../">
+          <span class="brand-home-icon" aria-hidden="true">←</span>
+          <span class="brand-home-label">Kapitel 3</span>
+        </a>
+        <span class="brand-mark">MySQL-Blitz</span>
+        <span class="brand-sub" id="module-label">JSON-DB abfragen</span>
+      </div>
+      <div class="progress" aria-live="polite">
+        <span id="step-label">1 / 5</span>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace workspace-mysql">
+      <section class="panel panel-task" aria-label="Aufgabe">
+        <p class="eyebrow" id="task-eyebrow">Challenge 1</p>
+        <h1 class="task-title" id="task-title">Laden…</h1>
+        <p class="task-body" id="task-body"></p>
+
+        <div class="mysql-help">
+          <p class="mysql-help-title">Erlaubt (Mini-SQL)</p>
+          <ul>
+            <li><code>SHOW TABLES;</code></li>
+            <li><code>SELECT * FROM personen;</code></li>
+            <li><code>SELECT vorname, alter FROM personen WHERE stadt = 'Homburg';</code></li>
+            <li><code>SELECT * FROM kurse ORDER BY ects DESC;</code></li>
+          </ul>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" id="btn-prev" disabled>Zurück</button>
+          <button type="button" class="btn btn-secondary" id="btn-next" disabled>Weiter</button>
+          <button type="button" class="btn btn-ghost" id="btn-hint">Tipp</button>
+        </div>
+      </section>
+
+      <section class="panel panel-output panel-mysql" aria-label="SQL Konsole">
+        <div class="output-header">
+          <h2>mysql&gt;</h2>
+          <span class="output-badge">JSON-Datenbank</span>
+        </div>
+        <div class="output-stage mysql-stage">
+          <label class="mysql-input-label" for="sql-input">Befehl tippen</label>
+          <div class="mysql-input-row">
+            <textarea
+              id="sql-input"
+              class="mysql-input"
+              rows="3"
+              spellcheck="false"
+              autocapitalize="off"
+              autocomplete="off"
+              placeholder="SELECT * FROM personen;"
+            ></textarea>
+            <button type="button" class="btn btn-primary" id="btn-run">Ausführen</button>
+          </div>
+          <p class="sort-feedback muted" id="feedback">Tippe einen Befehl und führe ihn aus.</p>
+          <div class="table-scroll mysql-result">
+            <table class="data-table" id="result-table"></table>
+          </div>
+          <p class="result-note" id="result-note"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="sql-engine.js"></script>
+  <script src="mysql.js"></script>
+</body>
+</html>

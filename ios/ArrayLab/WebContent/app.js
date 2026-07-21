@@ -90,7 +90,7 @@
 
         let html = escapeHtml(working)
           .replace(
-            /\b(print|for|in|len|True|False|ALGORITHMUS|ENDE|SETZE|AUSGEBE|WENN|DANN|SONST|SOLANGE|FÜR|JEDE|IN)\b/g,
+            /\b(print|for|in|len|True|False|ALGORITHMUS|ENDE|SETZE|AUSGEBE|WENN|DANN|SONST|SOLANGE|FÜR|JEDE|IN|STOP|SELECT|FROM|WHERE|ORDER|BY|ASC|DESC|SHOW|TABLES)\b/g,
             '<span class="tok-kw">$1</span>'
           )
           .replace(/\b(\d+)\b/g, '<span class="tok-num">$1</span>')

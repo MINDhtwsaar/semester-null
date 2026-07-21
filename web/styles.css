@@ -46,16 +46,60 @@ body.page-home {
 }
 
 .brand-home {
-  display: inline-block;
-  margin-bottom: 4px;
-  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  min-width: 48px;
+  margin: 0 0 8px;
+  padding: 10px 16px 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--ink-soft);
+  color: var(--ink);
   text-decoration: none;
+  line-height: 1.2;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.brand-home:hover {
+.brand-home-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #e4edf3;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.brand-home-label {
+  padding-right: 2px;
+}
+
+.brand-home:hover,
+.brand-home:focus-visible {
+  border-color: var(--accent);
   color: var(--accent);
+  outline: none;
+}
+
+.brand-home:hover .brand-home-icon,
+.brand-home:focus-visible .brand-home-icon {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.brand-home:active {
+  transform: scale(0.98);
+  background: #f3f7fa;
 }
 
 /* ── Startseite ─────────────────────────────────────────────────────── */
@@ -137,7 +181,7 @@ body.page-home {
 }
 
 .home-hero .brand-home {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .module-num {
@@ -402,26 +446,33 @@ body.page-home {
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin-top: auto;
-  padding-top: 4px;
+  padding-top: 8px;
 }
 
 .btn {
   appearance: none;
   border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 11px 18px;
+  border-radius: 12px;
+  min-height: 48px;
+  padding: 12px 20px;
   font: inherit;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease, transform 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.btn:not(:disabled):active {
+  transform: scale(0.98);
 }
 
 .btn-primary {
@@ -451,14 +502,15 @@ body.page-home {
 }
 
 .btn-ghost {
-  background: transparent;
-  border-color: transparent;
+  background: #fff;
+  border-color: var(--line);
   color: var(--ink-soft);
 }
 
 .btn-ghost:not(:disabled):hover {
   color: var(--ink);
-  background: rgba(20, 32, 43, 0.05);
+  background: #f0f5f8;
+  border-color: #9aafbf;
 }
 
 .output-header {
@@ -1019,5 +1071,105 @@ body.page-sort {
 
   .sort-actions-top .btn {
     flex: 1;
+  }
+}
+
+/* ── MySQL Blitz ────────────────────────────────────────────────────── */
+
+body.page-mysql {
+  overflow: hidden;
+}
+
+.workspace-mysql {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.mysql-help {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #eef4f8;
+  border: 1px solid var(--line);
+}
+
+.mysql-help-title {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.mysql-help ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.mysql-help code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  color: var(--ink);
+}
+
+.mysql-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mysql-input-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.mysql-input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mysql-input {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+  border: 1px solid #2a3544;
+  border-radius: 10px;
+  background: var(--bg-code);
+  color: #e8eef4;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  padding: 14px 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mysql-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.mysql-result {
+  min-height: 120px;
+}
+
+.panel-mysql .btn-primary {
+  min-height: 48px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  body.page-mysql {
+    overflow: auto;
+  }
+
+  .workspace-mysql {
+    grid-template-columns: 1fr;
   }
 }

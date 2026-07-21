@@ -1,6 +1,6 @@
 # Semester Null · Lab
 
-Einfache Lernumgebung für Programmier-Basics — Kapitel mit Aktivitäten, Multiple Choice + Tabellenausgabe.
+Einfache Lernumgebung für Programmier-Basics — Kapitel mit Aktivitäten, Multiple Choice, Drag & Drop und Mini-SQL.
 
 ## Website
 
@@ -13,25 +13,22 @@ Dann: [http://localhost:8080](http://localhost:8080)
 
 **Live:** [https://mindhtwsaar.github.io/semester-null/](https://mindhtwsaar.github.io/semester-null/)
 
-## Struktur
+## Kapitel 3 — Datenstrukturen und Algorithmen
 
-1. **Lab** (Start) → Kapitel  
-2. **Kapitel 3 — Datenstrukturen und Algorithmen**  
-   - Aktivität 01: Pseudocode  
-   - Aktivität 02: Datentypen  
-   - Aktivität 03: Arrays  
-   - Aktivität 04: Sortieren (Bubblesort per Drag & Drop)  
-
-Bedienung in den Übungen: Frage tippen → **Ausführen** → Auflösung + Tabelle → **Weiter**
+1. Pseudocode  
+2. Datentypen  
+3. Arrays  
+4. Sortieren (große Pseudocode-Blöcke, Drag & Drop)  
+5. Suchen  
+6. Komplexität (light)  
+7. Strukturen (Array ↔ Tabelle)  
+8. MySQL-Blitz (JSON-DB, tippbare `SELECT`/`WHERE`/`ORDER BY`)
 
 ## iPad-App
 
-1. `ios/ArrayLab.xcodeproj` in Xcode öffnen  
-2. Team unter Signing wählen  
-3. iPad-Simulator oder Gerät starten  
-
-Nach Web-Änderungen:
+`ios/ArrayLab.xcodeproj` in Xcode öffnen. Web-Sync:
 
 ```bash
-rm -rf ios/ArrayLab/WebContent && cp -R web ios/ArrayLab/WebContent
+cp web/styles.css ios/ArrayLab/WebContent/styles.css
+# bzw. geänderte Ordner unter web/kapitel/3/ nach ios/ArrayLab/WebContent/kapitel/3/ kopieren
 ```
