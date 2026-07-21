@@ -4,72 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>Array Lab</title>
+  <title>Semester Null · Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="app">
-    <header class="topbar">
-      <div class="brand">
-        <span class="brand-mark">Array Lab</span>
-        <span class="brand-sub" id="module-label">Einfaches Array</span>
-      </div>
-      <div class="progress" aria-live="polite">
-        <span id="step-label">1 / 1</span>
-        <div class="progress-track" aria-hidden="true">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
-      </div>
+<body class="page-home">
+  <div class="home">
+    <header class="home-hero">
+      <p class="home-kicker">Semester Null</p>
+      <h1 class="home-title">Lab</h1>
+      <p class="home-lead">
+        Kapitel mit kurzen Übungen — von Werten bis zu Strukturen.
+      </p>
     </header>
 
-    <main class="workspace">
-      <section class="panel panel-task" aria-label="Aufgabe">
-        <p class="eyebrow" id="task-eyebrow">Aufgabe</p>
-        <h1 class="task-title" id="task-title">Laden…</h1>
-        <p class="task-body" id="task-body"></p>
-
-        <div class="code-wrap">
-          <div class="code-header">
-            <span>Python</span>
-            <span class="code-hint">Nur lesen — tippe rechts, dann Ausführen</span>
+    <section class="home-modules" aria-label="Kapitel">
+      <a
+        class="module-card module-card-wide module-card-accent"
+        href="kapitel/3/"
+        data-chapter-progress
+        data-activities='[{"key":"pseudocode","total":6},{"key":"datentypen","total":6},{"key":"arrays","total":8},{"key":"sortieren","total":1}]'
+      >
+        <span class="module-num">Kapitel 03</span>
+        <h2>Datenstrukturen und Algorithmen</h2>
+        <p>
+          Pseudocode, Datentypen, Arrays und Sortieren — Abläufe bauen und Werte ordnen.
+        </p>
+        <span class="module-cta">Aktivitäten öffnen</span>
+        <div class="module-progress">
+          <div class="module-progress-meta">
+            <span class="module-progress-label">0 / 21</span>
           </div>
-          <pre class="code-block" id="code-block"><code></code></pre>
-        </div>
-
-        <div class="actions">
-          <button type="button" class="btn btn-primary" id="btn-run" disabled>Ausführen</button>
-          <button type="button" class="btn btn-ghost" id="btn-prev" disabled>Zurück</button>
-          <button type="button" class="btn btn-secondary" id="btn-next" disabled>Weiter</button>
-        </div>
-      </section>
-
-      <section class="panel panel-output" aria-label="Frage und Ausgabe">
-        <div class="output-header">
-          <h2 id="output-heading">Frage</h2>
-          <span class="output-badge" id="output-badge">Multiple Choice</span>
-        </div>
-        <div class="output-stage" id="output-stage">
-          <div class="quiz" id="quiz">
-            <p class="quiz-prompt" id="quiz-prompt"></p>
-            <div class="quiz-options" id="quiz-options" role="radiogroup" aria-labelledby="quiz-prompt"></div>
-            <p class="quiz-feedback hidden" id="quiz-feedback" aria-live="polite"></p>
-          </div>
-          <div class="output-result hidden" id="output-result">
-            <p class="result-caption" id="result-caption"></p>
-            <div class="table-scroll">
-              <table class="data-table" id="data-table"></table>
-            </div>
-            <p class="result-note" id="result-note"></p>
+          <div class="module-progress-track" aria-hidden="true">
+            <div class="module-progress-fill" style="width: 0%"></div>
           </div>
         </div>
-      </section>
-    </main>
+      </a>
+    </section>
   </div>
 
-  <script src="lessons.js"></script>
-  <script src="app.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>

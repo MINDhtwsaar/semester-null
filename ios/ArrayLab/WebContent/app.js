@@ -6,6 +6,34 @@
   let ran = false;
   let selectedOption = null;
 
+  function moduleId() {
+    const parts = location.pathname.replace(/\/+$/, "").split("/");
+    return parts[parts.length - 1] || "lab";
+  }
+
+  function storageKey() {
+    return "semester-null-progress-" + moduleId();
+  }
+
+  function loadSavedProgress() {
+    try {
+      const data = JSON.parse(localStorage.getItem(storageKey()) || "null");
+      if (!data) return { completed: 0 };
+      return { completed: Number(data.completed) || 0 };
+    } catch (e) {
+      return { completed: 0 };
+    }
+  }
+
+  function saveProgress() {
+    const prev = loadSavedProgress();
+    const completed = Math.max(prev.completed, index + 1);
+    localStorage.setItem(
+      storageKey(),
+      JSON.stringify({ completed: completed, total: lessons.length })
+    );
+  }
+
   const els = {
     moduleLabel: document.getElementById("module-label"),
     stepLabel: document.getElementById("step-label"),
@@ -62,7 +90,7 @@
 
         let html = escapeHtml(working)
           .replace(
-            /\b(print|for|in|len)\b/g,
+            /\b(print|for|in|len|True|False|ALGORITHMUS|ENDE|SETZE|AUSGEBE|WENN|DANN|SONST|SOLANGE|FÜR|JEDE|IN)\b/g,
             '<span class="tok-kw">$1</span>'
           )
           .replace(/\b(\d+)\b/g, '<span class="tok-num">$1</span>')
@@ -268,6 +296,7 @@
     ran = true;
     renderQuiz(lesson.quiz, true);
     renderTable(lesson.result);
+    saveProgress();
     updateNav();
 
     // Scroll result into view on smaller screens
@@ -301,6 +330,13 @@
     els.title.textContent = "Keine Aufgaben gefunden";
     els.body.textContent = "lessons.js konnte nicht geladen werden.";
     return;
+  }
+
+  const saved = loadSavedProgress();
+  if (saved.completed > 0 && saved.completed < lessons.length) {
+    index = saved.completed;
+  } else if (saved.completed >= lessons.length) {
+    index = lessons.length - 1;
   }
 
   renderLesson();

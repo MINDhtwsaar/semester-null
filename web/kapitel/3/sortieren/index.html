@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Sortieren · Kapitel 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css" />
+</head>
+<body class="page-sort">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <a class="brand-home" href="../">← Kapitel 3</a>
+        <span class="brand-mark">Sortieren</span>
+        <span class="brand-sub">Pseudocode · Bubblesort</span>
+      </div>
+      <div class="sort-actions-top">
+        <button type="button" class="btn btn-ghost" id="btn-reset">Zurücksetzen</button>
+        <button type="button" class="btn btn-primary" id="btn-run">Ausführen</button>
+      </div>
+    </header>
+
+    <main class="workspace workspace-sort">
+      <section class="panel panel-task panel-sort-build" aria-label="Pseudocode bauen">
+        <p class="eyebrow">Aktivität · Pseudocode</p>
+        <h1 class="task-title">Sortieren in großen Schritten</h1>
+        <p class="task-body">
+          Ordne die <strong>Pseudocode-Blöcke</strong> so, dass Bubblesort entsteht:
+          mehrere Durchläufe, Nachbarn vergleichen, bei Bedarf tauschen —
+          bis das Array <strong>aufsteigend</strong> ist.
+        </p>
+
+        <div class="sort-build">
+          <div class="sort-column">
+            <div class="sort-column-head">
+              <span>Pseudocode-Bausteine</span>
+              <span class="sort-hint">ziehen</span>
+            </div>
+            <div class="block-palette" id="palette" aria-label="Verfügbare Blöcke"></div>
+          </div>
+
+          <div class="sort-column">
+            <div class="sort-column-head">
+              <span>Dein Pseudocode</span>
+              <span class="sort-hint">Reihenfolge festlegen</span>
+            </div>
+            <div class="block-program" id="program" aria-label="Algorithmus-Reihenfolge">
+              <p class="block-empty" id="program-empty">Große Blöcke hier ablegen…</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel panel-output panel-sort-out" aria-label="Ausgabe">
+        <div class="output-header">
+          <h2>Ausgabe</h2>
+          <span class="output-badge">Wirkung des Pseudocodes</span>
+        </div>
+        <div class="output-stage sort-output" id="output-stage">
+          <p class="sort-feedback muted" id="feedback">
+            Lege zuerst den Pseudocode links, dann <strong>Ausführen</strong>.
+          </p>
+
+          <div class="array-viz" id="array-viz" aria-live="polite"></div>
+
+          <div class="output-result hidden" id="steps-wrap">
+            <p class="result-caption" id="steps-caption"></p>
+            <div class="table-scroll">
+              <table class="data-table" id="steps-table"></table>
+            </div>
+            <p class="result-note" id="steps-note"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="sort.js"></script>
+</body>
+</html>

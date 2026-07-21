@@ -1,6 +1,6 @@
-# Array Lab
+# Semester Null · Lab
 
-Einfache Lernumgebung für Arrays (1D + 2D) — Playgrounds-Layout, Deutsch, MySQL-ähnliche Tabellenausgabe.
+Einfache Lernumgebung für Programmier-Basics — Kapitel mit Aktivitäten, Multiple Choice + Tabellenausgabe.
 
 ## Website
 
@@ -9,27 +9,29 @@ cd web
 python3 -m http.server 8080
 ```
 
-Dann im Browser: [http://localhost:8080](http://localhost:8080)
+Dann: [http://localhost:8080](http://localhost:8080)
 
-Oder `web/index.html` direkt öffnen.
+**Live:** [https://mindhtwsaar.github.io/semester-null/](https://mindhtwsaar.github.io/semester-null/)
 
-**Bedienung:** Aufgabe lesen → **Ausführen** → Tabelle rechts → **Weiter**
+## Struktur
+
+1. **Lab** (Start) → Kapitel  
+2. **Kapitel 3 — Datenstrukturen und Algorithmen**  
+   - Aktivität 01: Pseudocode  
+   - Aktivität 02: Datentypen  
+   - Aktivität 03: Arrays  
+   - Aktivität 04: Sortieren (Bubblesort per Drag & Drop)  
+
+Bedienung in den Übungen: Frage tippen → **Ausführen** → Auflösung + Tabelle → **Weiter**
 
 ## iPad-App
 
-1. `ios/ArrayLab.xcodeproj` in Xcode öffnen
-2. Team unter Signing wählen
-3. iPad-Simulator (Landscape) oder Gerät starten
+1. `ios/ArrayLab.xcodeproj` in Xcode öffnen  
+2. Team unter Signing wählen  
+3. iPad-Simulator oder Gerät starten  
 
-Die App lädt die gebündelten Dateien aus `ios/ArrayLab/WebContent/`.
-
-Nach Änderungen an der Website:
+Nach Web-Änderungen:
 
 ```bash
-cp web/* ios/ArrayLab/WebContent/
+rm -rf ios/ArrayLab/WebContent && cp -R web ios/ArrayLab/WebContent
 ```
-
-## Inhalt
-
-1. Einfaches Array anlegen, Index, Länge, Schleife
-2. Mehrdimensionales Array (`personen`) mit Zeile/Spalte
